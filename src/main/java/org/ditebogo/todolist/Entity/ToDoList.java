@@ -5,8 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
@@ -25,12 +28,13 @@ public class ToDoList {
     @Column(name = "description", nullable = false)
     private String description;
 
-    @Column(name = "date_created",nullable = false)
-    private Date dateCreated;
+    @CreationTimestamp
+    @Column(name = "date_created", nullable = false, updatable = false)
+    private LocalDateTime dateCreated;
 
     @Column(name = "due_date",nullable = false)
-    private Date dueDate;
+    private LocalDate dueDate;
 
-    @Column(name = "isTaskDone", unique = false, nullable = false)
-    private boolean isTaskDone;
+    @Column(name = "is_task_done", nullable = false)
+    private boolean taskDone = false;
 }
