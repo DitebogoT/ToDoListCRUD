@@ -33,8 +33,10 @@ public class ToDoList {
     private LocalDateTime dateCreated;
 
     @Column(name = "due_date",nullable = false)
-    private LocalDate dueDate;
+    private LocalDateTime dueDate;
 
     @Column(name = "is_task_done", nullable = false)
     private boolean taskDone = false;
+
+
 }

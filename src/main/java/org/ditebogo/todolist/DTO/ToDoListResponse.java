@@ -10,8 +10,8 @@ public record ToDoListResponse(
         Long id,
         String taskName,
         String description,
-        LocalDate dueDate,
+        LocalDateTime dueDate,
         LocalDateTime dateCreated,
-        boolean isTaskDone
+        boolean taskDone
 ) {
 }
